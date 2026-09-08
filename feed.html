@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed - SocialConnect</title>
+    
+    <!-- Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons: Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="app-body">
+    <!-- Loader overlay -->
+    <div id="global-loader" class="loader-overlay hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <div class="app-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="main-sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="ph-fill ph-planet"></i>
+                    <h2>SocialConnect</h2>
+                </div>
+                <button class="mobile-menu-close" id="close-sidebar">
+                    <i class="ph ph-x"></i>
+                </button>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="feed.html" class="nav-item active">
+                    <i class="ph-fill ph-house"></i>
+                    <span>Home</span>
+                </a>
+                <a href="profile.html" class="nav-item">
+                    <i class="ph ph-user"></i>
+                    <span>Profile</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button class="btn btn-primary btn-block" id="new-post-btn-sidebar">
+                    <span>Post</span>
+                    <i class="ph-bold ph-feather"></i>
+                </button>
+                <div class="user-profile-mini">
+                    <div class="avatar" id="current-user-avatar">SC</div>
+                    <div class="user-info">
+                        <span class="username" id="current-username">@user</span>
+                    </div>
+                    <button id="logout-btn" class="logout-btn" title="Logout">
+                        <i class="ph ph-sign-out"></i>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Feed Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <button class="mobile-menu-toggle" id="open-sidebar">
+                    <i class="ph ph-list"></i>
+                </button>
+                <h1>Home</h1>
+                <div class="header-actions">
+                    <button class="theme-toggle" id="theme-toggle">
+                        <i class="ph ph-moon"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div class="feed-container">
+                <!-- Create Post Area -->
+                <div class="create-post-card glass-panel">
+                    <div class="create-post-header">
+                        <div class="avatar small">SC</div>
+                        <textarea id="post-content" placeholder="What's happening?" rows="3" maxlength="280"></textarea>
+                    </div>
+                    <div class="create-post-footer">
+                        <span class="char-count" id="char-count">0 / 280</span>
+                        <button class="btn btn-primary" id="publish-post-btn" disabled>Post</button>
+                    </div>
+                </div>
+
+                <!-- Posts Feed -->
+                <div class="posts-feed" id="posts-container">
+                    <!-- Posts will be injected here by JS -->
+                    <div class="empty-state hidden" id="empty-feed">
+                        <i class="ph-duotone ph-ghost"></i>
+                        <h3>No posts yet</h3>
+                        <p>Be the first to share something with the community.</p>
+                    </div>
+                    
+                    <div class="feed-loader" id="feed-loader">
+                        <div class="spinner small"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Right Sidebar (Trends/Suggestions) -->
+        <aside class="right-sidebar">
+            <div class="widget glass-panel">
+                <h3>Trending Topics</h3>
+                <ul class="trending-list">
+                    <li>
+                        <span class="trend-category">Technology</span>
+                        <span class="trend-name">#WebDevelopment</span>
+                        <span class="trend-stats">12.5K posts</span>
+                    </li>
+                    <li>
+                        <span class="trend-category">Design</span>
+                        <span class="trend-name">#UIUX</span>
+                        <span class="trend-stats">8.2K posts</span>
+                    </li>
+                    <li>
+                        <span class="trend-category">Community</span>
+                        <span class="trend-name">#100DaysOfCode</span>
+                        <span class="trend-stats">5.4K posts</span>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- JS -->
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/pages/feed.js"></script>
+</body>
+</html>

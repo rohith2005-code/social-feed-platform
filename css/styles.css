@@ -1,0 +1,171 @@
+:root {
+    /* Color Palette - Premium Dark Theme by default */
+    --hue: 240;
+    
+    /* Backgrounds */
+    --bg-base: hsl(var(--hue), 10%, 6%);
+    --bg-surface: hsl(var(--hue), 12%, 12%);
+    --bg-surface-hover: hsl(var(--hue), 12%, 18%);
+    --bg-surface-active: hsl(var(--hue), 12%, 24%);
+    
+    /* Primary (Neon/Vibrant accent) */
+    --primary: hsl(265, 89%, 66%);
+    --primary-hover: hsl(265, 89%, 72%);
+    --primary-active: hsl(265, 89%, 55%);
+    --primary-alpha: hsla(265, 89%, 66%, 0.15);
+    
+    /* Secondary (Teal/Cyan accent) */
+    --secondary: hsl(180, 70%, 50%);
+    
+    /* Text */
+    --text-primary: hsl(var(--hue), 10%, 95%);
+    --text-secondary: hsl(var(--hue), 10%, 70%);
+    --text-tertiary: hsl(var(--hue), 10%, 50%);
+    --text-inverse: hsl(var(--hue), 10%, 10%);
+    
+    /* Semantic */
+    --error: hsl(350, 70%, 55%);
+    --error-bg: hsla(350, 70%, 55%, 0.1);
+    --success: hsl(150, 70%, 45%);
+    --success-bg: hsla(150, 70%, 45%, 0.1);
+    --warning: hsl(40, 90%, 55%);
+    --like: hsl(340, 80%, 60%);
+    
+    /* Borders & Dividers */
+    --border-color: hsl(var(--hue), 10%, 20%);
+    --border-color-focus: var(--primary);
+    
+    /* Glassmorphism */
+    --glass-bg: hsla(var(--hue), 12%, 12%, 0.6);
+    --glass-border: hsla(var(--hue), 10%, 100%, 0.08);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.4);
+    --shadow-glow: 0 0 16px var(--primary-alpha);
+    
+    /* Typography */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    
+    /* Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+    
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+    
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Light Theme overrides (Optional for toggling) */
+[data-theme="light"] {
+    --bg-base: hsl(var(--hue), 10%, 98%);
+    --bg-surface: hsl(var(--hue), 10%, 100%);
+    --bg-surface-hover: hsl(var(--hue), 10%, 94%);
+    --bg-surface-active: hsl(var(--hue), 10%, 90%);
+    
+    --text-primary: hsl(var(--hue), 15%, 15%);
+    --text-secondary: hsl(var(--hue), 10%, 40%);
+    --text-tertiary: hsl(var(--hue), 10%, 60%);
+    --text-inverse: hsl(var(--hue), 10%, 98%);
+    
+    --border-color: hsl(var(--hue), 10%, 85%);
+    
+    --glass-bg: hsla(var(--hue), 10%, 100%, 0.7);
+    --glass-border: hsla(var(--hue), 10%, 0%, 0.05);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+    
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--primary-hover);
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+    border: none;
+    background: none;
+}
+
+input, textarea {
+    font-family: inherit;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-base); 
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color); 
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-tertiary); 
+}
+
+/* Utilities */
+.hidden {
+    display: none !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+}

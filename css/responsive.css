@@ -1,0 +1,115 @@
+/* --- Tablet (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+    .right-sidebar {
+        display: none;
+    }
+    
+    .main-content {
+        border-right: none;
+    }
+}
+
+/* --- Mobile (max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* Auth Layout */
+    .auth-layout {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .auth-hero {
+        display: none; /* Hide hero on small screens for auth */
+    }
+    
+    .mobile-logo {
+        display: flex;
+    }
+    
+    .auth-form-container {
+        padding: var(--space-4);
+        min-height: 100vh;
+    }
+    
+    .form-wrapper {
+        padding: var(--space-6) var(--space-4);
+        background: var(--bg-surface);
+        backdrop-filter: none;
+        box-shadow: none;
+        border: none;
+    }
+    
+    /* App Layout */
+    .sidebar {
+        position: fixed;
+        left: -100%;
+        width: 280px;
+        z-index: 1000;
+        background: var(--bg-surface);
+        transition: left var(--transition-normal);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .sidebar.open {
+        left: 0;
+    }
+    
+    .mobile-menu-close {
+        display: block;
+    }
+    
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .content-header {
+        padding: var(--space-3) var(--space-4);
+    }
+    
+    .create-post-card {
+        padding: var(--space-4);
+    }
+    
+    .post-card {
+        padding: var(--space-4);
+    }
+    
+    .profile-details {
+        padding: var(--space-4);
+    }
+    
+    .profile-avatar-large {
+        width: 90px;
+        height: 90px;
+        bottom: -45px;
+        left: var(--space-4);
+        font-size: 2rem;
+    }
+    
+    .profile-actions {
+        margin-bottom: var(--space-6);
+    }
+    
+    .toast-container {
+        bottom: var(--space-4);
+        right: var(--space-4);
+        left: var(--space-4);
+    }
+    
+    .toast {
+        min-width: 0;
+        width: 100%;
+    }
+}
+
+/* --- Small Mobile (max-width: 480px) --- */
+@media (max-width: 480px) {
+    .post-actions {
+        gap: var(--space-6);
+        justify-content: space-between;
+        padding-right: var(--space-4);
+    }
+    
+    .profile-stats {
+        gap: var(--space-4);
+    }
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - SocialConnect</title>
+    
+    <!-- Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons: Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="auth-body">
+    <!-- Loader overlay -->
+    <div id="global-loader" class="loader-overlay hidden">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <main class="auth-layout">
+        <div class="auth-hero">
+            <div class="hero-content">
+                <div class="logo-wrapper">
+                    <i class="ph-fill ph-planet"></i>
+                    <h1>SocialConnect</h1>
+                </div>
+                <p>Start sharing your moments and connect with a vibrant community.</p>
+                
+                <div class="glass-decoration"></div>
+                <div class="glass-decoration secondary"></div>
+            </div>
+        </div>
+        <div class="auth-form-container">
+            <div class="form-wrapper glass-panel">
+                <div class="mobile-logo">
+                    <i class="ph-fill ph-planet"></i>
+                    <h2>SocialConnect</h2>
+                </div>
+                <h2>Create Account</h2>
+                <p class="subtitle">Join us today! It only takes a minute.</p>
+                
+                <form id="register-form" class="auth-form" novalidate>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <div class="input-icon-wrapper">
+                            <i class="ph ph-user"></i>
+                            <input type="text" id="username" name="username" placeholder="johndoe" required autocomplete="username">
+                        </div>
+                        <span class="error-text" id="username-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-icon-wrapper">
+                            <i class="ph ph-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email">
+                        </div>
+                        <span class="error-text" id="email-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="input-icon-wrapper">
+                            <i class="ph ph-lock-key"></i>
+                            <input type="password" id="password" name="password" placeholder="••••••••" required autocomplete="new-password">
+                            <button type="button" class="toggle-password" tabindex="-1">
+                                <i class="ph ph-eye"></i>
+                            </button>
+                        </div>
+                        <div class="password-strength">
+                            <div class="strength-bar" id="strength-bar"></div>
+                        </div>
+                        <span class="error-text" id="password-error"></span>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block" id="register-submit">
+                        <span>Sign Up</span>
+                        <i class="ph ph-arrow-right"></i>
+                    </button>
+                </form>
+                
+                <p class="auth-switch">
+                    Already have an account? <a href="login.html">Sign in</a>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- JS -->
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/pages/register.js"></script>
+</body>
+</html>
